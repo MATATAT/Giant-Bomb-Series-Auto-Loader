@@ -1,0 +1,16 @@
+{
+	"manifest_version": 2,
+
+	"name": "Giant Bomb Series Auto-Loader",
+	"description": "Allows you to search for videos on Giant Bomb and can iterate through videos if it is a series.",
+	"version": "0.1",
+
+	"browser_action": {
+		"default_icon": "",
+		"default_popup": "popup.html"
+	},
+
+	"permissions": {
+		"storage"
+	}
+}
