@@ -3,15 +3,23 @@ var user = {
 
     initialize: function () {
         var that = this;
-        if (!that.apiKey) {
-            chrome.storage.local.get('api_key', function (items) {
-                if (runtime.lastError) {
-                    // Need to get user key
-                } else {
-                    that.apiKey = items.api_key;
-                }
-            });
-        }
+        chrome.storage.local.get('api_key', function (items) {
+            var apiModal = $('#userApiModal'), 
+                apiTextKey = $('#apiTextKey');
+
+            //if (chrome.runtime.lastError) {
+            if (items.api_key === undefined) {
+                $('#saveApi').click(function () {
+                    that.apiKey = apiTextKey.val();
+                    apiModal.modal('hide');
+                });
+
+                /* Initiate modal */
+                apiModal.modal();
+            } else {
+                that.apiKey = items.api_key;
+            }
+        });
     },
 
     /*
