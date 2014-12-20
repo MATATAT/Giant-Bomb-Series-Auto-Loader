@@ -10,7 +10,10 @@ var user = {
             //if (chrome.runtime.lastError) {
             if (items.api_key === undefined) {
                 $('#saveApi').click(function () {
-                    that.apiKey = apiTextKey.val();
+                    var apiKey = apiTextKey.val();
+                    if (apiKey) {
+                        that.setApiStorageKey();
+                    }
                     apiModal.modal('hide');
                 });
 
@@ -30,7 +33,7 @@ var user = {
     setUserApiKey: function (userApiKey) {
         var that = this;
         chrome.storage.local.set({'api_key': userApiKey}, function () {
-            if (runtime.lastError) {
+            if (chrome.runtime.lastError) {
                 alert("There was an error setting the API key.");
             } else {
                 that.apiKey = userApiKey;
