@@ -1,0 +1,1 @@
+var gbSeriesApp = angular.module("gbSeriesApp", []);

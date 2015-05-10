@@ -4,47 +4,10 @@
 		<title>Giant Bomb Series Auto-Loader</title>
 
 		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<link rel="stylesheet" type="text/css" href="external/bootstrap/bootstrap-3.3.1-dist/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="js/external/bootstrap/bootstrap-3.3.1-dist/dist/css/bootstrap.min.css">
 
-		<script type="text/javascript" src="external/jquery/jquery-1.11.2.min.js"></script>
-		<script type="text/javascript" src="external/bootstrap/bootstrap-3.3.1-dist\dist\js\bootstrap.min.js"></script>
-
-		<script type="text/javascript" src="js/user.js"></script>
-		<script type="text/javascript" src="js/popup.js"></script>
+		<script type="text/javascript" data-main="js/external/mainExt.js" src="js/external/requirejs/require.js"></script>
 	</head>
-	<body>
-		<!-- Profiles -->
-		<div id="videoProfiles"></div>
-
-		<!-- Video Search -->
-		<form action="/" onsubmit="javascript:gbSearch.searchSubmit()">
-			<span>Video Search:</span>
-			<input type="search" name="giantbombsearch" >
-			<input type="submit">
-		</form>
-		<div id="videoResults"></div>
-
-		<!-- User API Modal -->
-		<div class="modal fade" id="userApiModal" role="dialog" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">
-							<span aria-hidden="true">&times;</span>
-							<span class="sr-only">Close</span>
-						</button>
-						<h4 class="modal-title" id="userApiModal-title">User API Key</h4>
-					</div>
-					<div class="modal-body">
-						<span>API Key:</span>
-						<input type="text" id="apiTextKey">
-					</div>
-					<div class="modal-body">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary" id="saveApi">Save</button>
-					</div>
-				</div>
-			</div>
-		</div>
+	<body >
 	</body>
 </html>
